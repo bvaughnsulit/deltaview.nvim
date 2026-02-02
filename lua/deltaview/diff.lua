@@ -288,7 +288,7 @@ end
 --- @param cmd_ui table The cmd_ui
 --- @param on_ready_callback function after the cmd_ui has initialized, run this function
 M.display_delta_file = function(cmd, cmd_ui, on_ready_callback)
-    local delta_cmd = cmd .. ' | delta --line-numbers --paging=never | sed "1,7d"'
+    local delta_cmd = cmd .. ' | delta --line-numbers --paging=never --hunk-header-style=omit --file-style=omit'
 
     -- get previous cursor state
     vim.cmd('normal! zz')
